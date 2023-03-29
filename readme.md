@@ -13,7 +13,6 @@ This project demostrates as minimalistic as possible how to connect to and aquir
 - Via the drop-down control the measurement range can be changed. The change takes place immediately and data aquisition continues.
 
 ## GUI Description
-
 To keep things as simple as possible, the GUI is straightforward and not protected against wrong input. No further processing of the collected data has been implemented, nor has an auto-ranging function been included.
 
 The main screen contains a tabbed interface showing port selection, the latest sensor data record, the actual photocurrent value both as a number and as a graph, and the START/STOP buttons on the default page.
@@ -39,6 +38,8 @@ Changing the range is done by writing a value between 0 (smallest) and 3 (widest
 
 The sensor internally has a sampling rate of 13.75 Hz, thus there is no sense in polling it mor often than ever 25...50 ms for a new reading (therefore the even case's timeout setting is 25 ms)
 
+## References
+Further details can be found in the [SGCD4_Programming_Guide.pdf](https://download.sglux.de/amplifiers/sgcd4/SGCD4_Programming_Guide.pdf).
 
 ## Requirements
 - Labview 2014 or later
