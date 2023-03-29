@@ -1,6 +1,8 @@
 # sglux SGCD4 DAQ Example
 
-This project demostrates as minimalistic as possible how to connect to and aquire data from a sglux [SGCD4 photocurrent aquisition system](https://sglux.de/en/produkt/sgcd4/).
+This project demostrates as minimalistic as possible how to connect to and aquire data from a sglux<br>[SGCD4 photocurrent aquisition system](https://sglux.de/en/produkt/sgcd4/).
+
+![SGCD4](https://sglux.de/data-matrix/uploads/2018/12/sglux_SGCD4-1-300x237.png)
 
 ## Usage
 - Connect the device via USB to your computer.
