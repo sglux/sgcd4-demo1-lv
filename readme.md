@@ -16,6 +16,7 @@ To keep things as simple as possible, the GUI is straightforward and not protect
 
 The main screen contains a tabbed interface showing port selection, the latest sensor data record, the actual photocurrent value both as a number and as a graph, and the START/STOP buttons on the default page.
 ![Screenshot 1](img/screen1.png)
+
 *Besides the current value, another important piece of information is displayed here as REL_LEVEL. This number ranges from 0 to 1 and indicates how high the level is in relation to the end of the active measurement range. If this level is below 5%, you should consider switching to the next lower range. If it is close to 1 (or above 1) the next higher range shall be selected.*
 
 On the second tab some information about the device and it's settings are displayed.
@@ -25,14 +26,14 @@ The third tab shows the list of the aquired data from hitting START to clicking 
 ![Screenshot 3](img/screen3.png)
 
 ## Block diagram
-The correct port parameters are 115200 Baud, 8E1, no flow control
+The correct port parameters are 115200 Baud, 8E1, no flow control<br>
 ![Open Modbus Master](img/block1.png)
 
-It is important to know the currently active measurement range, which can be read (and written to) Modbus register 137. This value is required to index the returned RAD array to get the correctly calibrated value
+It is important to know the currently active measurement range, which can be read (and written to) Modbus register 137. This value is required to index the returned RAD array to get the correctly calibrated value<br>
 ![Index RAD according to RANGE_SEL](img/block2.png)
 
-Changing the range is done by writing a value between 0 (smallest) and 3 (widest range) to Modbus register 137 as an unsingned 16 bit value. After changing the range it is recommended to ignore a few readings (wait for 0.3 - 1 second) while the internal electronics settles to the new situation.
-![Changing the range](img/block3.png)
+Changing the range is done by writing a value between 0 (smallest) and 3 (widest range) to Modbus register 137 as an unsingned 16 bit value. After changing the range it is recommended to ignore a few readings (wait for 0.3 - 1 second) while the internal electronics settles to the new situation.<br>
+![Changing the range](img/block3.PNG)
 
 The sensor internally has a sampling rate of 13.75 Hz, thus there is no sense in polling it mor often than ever 25...50 ms for a new reading (therefore the even case's timeout setting is 25 ms)
 
